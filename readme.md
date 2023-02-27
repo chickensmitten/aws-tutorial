@@ -1,4 +1,4 @@
-# AWS SDK References
+# AWS SDK References and Tutorial
 
 ## Intro
 - It is good practice to create new IAM User and use that user's details instead of using the root details.
@@ -160,3 +160,52 @@ redis-cli -h   -p 6379
   - [terminate instance](/ec2v3/TerminateInstance.js)
   - [delete security group](/ec2v3/DeleteSec.js)
   - [delete key pair](/ec2v3/DeleteKey.js)
+
+## EC2 EBS
+<!-- To do -->
+- [user data](/ec2v3/UserData.js). ***Study more to understand value proposition***
+- when creating an instance, can assign a security group for that instance. This allows all users in that security group to access the instance.
+- Amazon EBS and Snapshot. ***Study more to understand value proposition***
+
+## Deploy NodeJS with RDS and EC2 according to this project
+- Refer to [my-app](/my-app/) for code
+- `npm init`
+- Create a DB
+- Launch an EC2 instance
+- Deploy NodeJS to EC2 instance
+  - install node in EC2 instance
+  - install git in EC2 instance
+  - clone git project in EC2 instance
+  ```
+  sudo yum install -y gcc-c++ make
+  curl -sL https://rpm.nodesource.com/setup_16.x | sudo -E bash -
+  sudo yum install -y nodejs
+  sudo yum install -y git
+  ```
+- Start project by running `node app.js`
+
+## Elastic Load Balancing
+<!-- To Do -->
+
+## Lamda
+<!-- To Do -->
+
+## Simple Email Service (SES)
+- verify email identity to test send emails to the verified emails during sandbox mode
+- can choose scenario to simulate situations like bounce during sandbox
+- Version 2 Commands
+  - [verify email](/SESV2/VerifyEmail.js)
+  - [list identity email](/SESV2/ListIde.js)
+  - [create email templates](/SESV2/CreateTemp.js)
+  - [get email templates](/SESV2/GetTemp.js)
+  - [send template email](/SESV2/SendMail.js)
+  - [send plain email](/SESV2/SendPlain.js)
+  - [send html email](/SESV2/SendHtml.js)
+- Version 3 commands
+  - [verify email](/SESV3/VerifyEmail.js)
+  - [list identity email](/SESV3/ListIde.js)
+  - [create email templates](/SESV3/CreateTemp.js)
+  - [get email templates](/SESV3/GetTemp.js)
+  - [send template email](/SESV3/SendMail.js)
+  - [send plain email](/SESV3/SendPlain.js)
+  - [send html email](/SESV3/SendHtml.js)
