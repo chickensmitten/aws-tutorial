@@ -1,10 +1,11 @@
 # AWS SDK
 
-## Setup
+## Intro
 - It is good practice to create new IAM User and use that user's details instead of using the root details.
 - every created user is limited by their role and geography
 - Start with creating an IAM user, add to a group or given relevant permissions
 - install aws-sdk with `npm install aws-sdk` to install version 2
+- Use this as [AWS policy generator](https://awspolicygen.s3.amazonaws.com/policygen.html)
 
 ## AWS SDK Version2
 - User functions
@@ -74,3 +75,43 @@
   - `aws iam attach-user-policy --policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess --user-name someusername`
   - `aws iam create-access-key --user-name someusername`
   - `aws iam create-group --group-name SomeGroupName`
+
+## DynamoDB
+- To do
+
+## ElasticCache
+- Fully managed and memory caching service
+- Compatible with Redis and Memcache
+- create a redis -> create an ec2 -> in ec2 shell add the following command below -> then use the primary redis endpoint -> if connection not refused, it is a success
+```
+sudo amazon-linux-extras install epel
+sudo yum update
+sudo yum install redis
+redis-cli --version
+
+
+redis-cli -h   -p 6379
+```
+
+## S3 version 2
+- [Amazon S3 Guide](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)
+- When creating an S3, unblock public access with Access Control List (ACL) enabled for public to read.
+- Can determine ACL with `ACL:'private'`, `ACL:'public-read'`, or `ACL:'public-read-write'`
+- Refer to [s3 folder](/s3v2/) for executing S3 JS code.
+  - [create bucket](/s3v2/CreateBucket.js)
+  - [upload image to bucket](/s3v2/UploadImg.js)
+  - [listing buckets](/s3v2/ListBuck.js)
+  - [delete buckets](/s3v2/DeleteBuck.js)
+  - [delete non empty bucket](/s3v2/DeleteNone.js)
+  - [upload file to bucket](/s3v2/UploadFile.js)
+  - [get object from bucket](/s3v2/GetObj.js)
+  - [list objects](/s3v2/ListFiles.js)
+  - [list filtered objects](/s3v2/ListFilter.js)
+  - [get object attributes](/s3v2/GetAttribute.js)
+  - [copy object](/s3v2/CopyObj.js)
+  - [delete object](/s3v2/DeleteObj.js)
+  - [delete multiple object](/s3v2/DeleteMulti.js)
+- Hosting static website in s3
+  - In react or next get the built files or folder in `build` and upload as files to s3
+
+  
