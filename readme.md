@@ -1,4 +1,4 @@
-# AWS SDK
+# AWS SDK References
 
 ## Intro
 - It is good practice to create new IAM User and use that user's details instead of using the root details.
@@ -132,3 +132,31 @@ redis-cli -h   -p 6379
 ## Relational Database Service RDS
 <!-- To do -->
 
+## EC2 Version 2
+- When launching instances, select an Amazon Machine Image (AMI)
+- Recommended to choose Ubuntu instance
+- Use EC2 instance connect to get into the instance's CLI
+- Commands
+  - [create key pair for instance](/ec2v2/CreateKey.js) then save it in local directory using the file system `fs`
+  - [create a security group](/ec2v2/CreateSecurity.js), which acts as our virtual firewall to control inbound and outbound rules. Like allow traffic from all IPs.
+  - [create inbound rules](/ec2v2/CreateRule.js), specify rules for security group
+  - [create instance](/ec2v2/CreateInstance.js)
+  - [describe instance](/ec2v2/DescribeInfo.js)
+  - [get and describe security group](/ec2v2/GetSecurity.js)
+  - [stop instance](/ec2v2/StopInstance.js)
+  - [terminate instance](/ec2v2/TerminateInstance.js)
+  - [delete security group](/ec2v2/DeleteSecurity.js)
+  - [delete key pair](/ec2v2/DeleteKey.js)
+
+## EC2 Version 3
+- Commands
+  - [create key pair for instance](/ec2v3/CreateKey.js)
+  - [create a security group](/ec2v3/CreateSec.js)
+  - [create inbound rules](/ec2v3/CreateRule.js)
+  - [create instance](/ec2v3/CreateInstance.js)
+  - [describe instance](/ec2v3/DescribeInfo.js)
+  - [get and describe security group](/ec2v3/GetSec.js)
+  - [stop instance](/ec2v3/StopInstance.js)
+  - [terminate instance](/ec2v3/TerminateInstance.js)
+  - [delete security group](/ec2v3/DeleteSec.js)
+  - [delete key pair](/ec2v3/DeleteKey.js)
