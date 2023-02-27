@@ -97,7 +97,8 @@ redis-cli -h   -p 6379
 - [Amazon S3 Guide](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)
 - When creating an S3, unblock public access with Access Control List (ACL) enabled for public to read.
 - Can determine ACL with `ACL:'private'`, `ACL:'public-read'`, or `ACL:'public-read-write'`
-- Refer to [s3 folder](/s3v2/) for executing S3 JS code.
+- When ACL is `private`, can only open the image through the "Open" button in AWS S3 dashboard. Won't be able to access the image through copy and paste.
+- Refer to [s3 folder](/s3v2/) for executing S3 version 2 JS code.
   - [create bucket](/s3v2/CreateBucket.js)
   - [upload image to bucket](/s3v2/UploadImg.js)
   - [listing buckets](/s3v2/ListBuck.js)
@@ -114,4 +115,16 @@ redis-cli -h   -p 6379
 - Hosting static website in s3
   - In react or next get the built files or folder in `build` and upload as files to s3
 
-  
+## S3 version 3
+- `npm install @aws-sdk/client-s3`
+- Refer to [s3 folder](/s3v2/) for executing S3 version 3 JS code.
+  - [create bucket](/s3v3/CreateBuck.js)
+  - [generate bucket policy](/s3v3/CreatePol.js). changes the bucket policy in permissions.
+  - [delete bucket policy](/s3v3/DeleteBuck.js)
+  - [upload image](/s3v3/UploadImage.js). change ACL policy to `public-read` to allow public to see the files.
+  - [list bucket](/s3v3/UploadImage.js)
+  - [delete bucket](/s3v3/DeleteBuck.js)
+  - [delete object](/s3v3/DeleteObj.js)
+  - [delete multiple object](/s3v3/DeleteMObj.js)
+  - [list object](/s3v3/ListObj.js)
+  - [copy object](/s3v3/CopyObj.js)
