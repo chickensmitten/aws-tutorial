@@ -2,6 +2,7 @@
 
 ## Setup
 - It is good practice to create new IAM User and use that user's details instead of using the root details.
+- every created user is limited by their role and geography
 - Start with creating an IAM user, add to a group or given relevant permissions
 - install aws-sdk with `npm install aws-sdk` to install version 2
 
@@ -36,7 +37,7 @@
   - Modularized packages: Users can now use a separate package for each service.
   - New middleware stack: Users can now use a middleware stack to control the lifecycle of an operation call.
   - Supports Typescript
-- User function
+- functions in version 3 is similar to version 2
   - [create user](/IAMV3/CreateUser.js)
   - [list user](/IAMV3/ListUser.js)
   - [update user](/IAMV3/UpdateUser.js)
@@ -52,3 +53,24 @@
   - [create login for user](/IAMV3/CreateLogin.js)
   - [delete login profile of user](/IAMV3/DeleteLogin.js)
   - [delete user](/IAMV3/DeleteUser.js)
+
+## CloudShell
+- Browser based CLI for AWS
+- Commands
+  - `aws --version`
+  - `aws iam list-users`
+  - `aws iam create-user --user-name somenewusername`
+  - `aws iam create-login-profile --generate-cli-skeleton > create-login-profile.json`
+  then `pwd` then download file to `/home/cloudshell-user/create-login-profile.json` then inside it, fill it up with requeste details
+  ```
+  // create a .json file and input the details
+  {
+    Password:'Mypassword2',
+    PasswordResetRequired:true,
+    UserName:'bob'
+  }
+  ```
+  then upload the file to Cloudshell, then run `aws iam create-login-profile --cli-input-json file://craete-login-profile.json` to run the file.
+  - `aws iam attach-user-policy --policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess --user-name someusername`
+  - `aws iam create-access-key --user-name someusername`
+  - `aws iam create-group --group-name SomeGroupName`
