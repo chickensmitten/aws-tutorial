@@ -7,11 +7,11 @@
 
 ## AWS SDK Version2
 - User functions
-  - [create User](/IAMV2/CreateUser.js)
+  - [create user](/IAMV2/CreateUser.js)
   - [get user info](/IAMV2/GetUserInfo.js)
-  - [list User](/IAMV2/ListAll.js)
-  - [update User](/IAMV2/UpdateUser.js)
-  - [delete User](/IAMV2/DeleteUser.js). All policies and access keys should be removed, deleted or detached from the user before deleting the user.
+  - [list user](/IAMV2/ListAll.js)
+  - [update user](/IAMV2/UpdateUser.js)
+  - [delete user](/IAMV2/DeleteUser.js). All policies and access keys should be removed, deleted or detached from the user before deleting the user.
 - Policies functions
   - [create policies](/IAMV2/CreatePolicy.js)
   - [list policies](/IAMV2/ListPolicy.js)
@@ -31,4 +31,24 @@
   - [change user password](/IAMV2/ChangePassword.js)
 
 ## AWS SDK Version3
-- 
+- Refer to this for [AWS SDK Version3](https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/welcome.html)
+- Why Version3?
+  - Modularized packages: Users can now use a separate package for each service.
+  - New middleware stack: Users can now use a middleware stack to control the lifecycle of an operation call.
+  - Supports Typescript
+- User function
+  - [create user](/IAMV3/CreateUser.js)
+  - [list user](/IAMV3/ListUser.js)
+  - [update user](/IAMV3/UpdateUser.js)
+  - [create policy](/IAMV3/CreatePolicy.js)
+  - [list policies](/IAMV3/ListPolicy.js)
+  - [attach policy to user](/IAMV3/AttachPol.js)
+  - [detach policy from user](/IAMV3/DetachPol.js)
+  - [create user group](/IAMV3/CreateGroup.js)
+  - [attach policy to user group](/IAMV3/AttachPGro.js)
+  - [add user to group](/IAMV3/AddUserGro.js)
+  - [detach policy from group](/IAMV3/DetachPGro.js)
+  - [create access key for user](/IAMV3/CreateAccess.js)
+  - [create login for user](/IAMV3/CreateLogin.js)
+  - [delete login profile of user](/IAMV3/DeleteLogin.js)
+  - [delete user](/IAMV3/DeleteUser.js)
